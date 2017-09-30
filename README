@@ -1,0 +1,8 @@
+An implementation of Tcl. Mostly faithful.
+
+One day in the mid 1990's I got a copy of John Ousterhout's Tcl
+book. I hadn't used the language before, but after reading a few 
+chapters I was so impressed by the elegance of the design that I
+spent the next two days in a frenzy writing this code just for fun.
+
+

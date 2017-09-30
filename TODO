@@ -1,0 +1,50 @@
+del n(i)
+   if n aliased, transparent
+   if n(i) aliased, must do real var
+del n
+
+Most of the MakeVar, etc, routines should be moved into VariableTree
+and VarStack classes. The routines should then mostly be one-line
+calles to frames.
+
+Differences with standard Tcl:
+
+- comments can begin anywhere a word is expected; a comment
+	acts as a command terminator. Thus:
+
+	set a 2 # comment
+
+  is legitimate (not in real Tcl), and equivalent to:
+
+	set a 2 ;# comment
+
+- no floating point support as yet
+- errorcode variable not supported (including in exit/return)
+- no support for lists in glob yet.
+- Tcl exec replaced by simple exec/execcatch for now (about the
+	best we can do under DOS, or is it with DOS>=5.0?
+
+- Extra commands:
+
+	decr
+	clear : clear the screen
+	execcatch
+	sleep
+
+TEST:
+	return and exit options/args
+	file command
+
+TODO:
+	array searches are incomplete
+	complete "regexp"
+	"regsub"
+	"file readlink"
+	"pid"
+	Fancy features of exec under UNIX
+	"open |" ?
+	History list with hooks to command editor
+	Add floating point expressions & math functions
+	  and expand expression set to full set of operators.
+	Enhance the scan/format stuff (esp. scan)
+
